@@ -48,6 +48,10 @@ jobs:
     - name: Update menu
       run: python hello.py
 
+    - name: Sync with remote
+      run: |
+        git fetch origin main
+        git merge FETCH_HEAD
 
     - name: Commit and push changes
       run: |
