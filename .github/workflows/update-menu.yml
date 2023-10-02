@@ -56,8 +56,8 @@ jobs:
         git add -A :!chromedriver_linux64.zip
         git add .
         git commit -m "자동으로 파일 추가 및 수정 커밋"
-        git push https://username:${{ secrets.GITHUB_ACCESS_TOKEN }}@github.com/lovebubbly/haksik.git
+        git push https://username:${{ secrets.MY_GITHUB_ACCESS_TOKEN }}@github.com/lovebubbly/haksik.git
       env:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.MY_GITHUB_ACCESS_TOKEN }}
 
 
