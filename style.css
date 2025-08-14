@@ -5,53 +5,37 @@ body {
   background-color: #f7f7f7;
 }
 
-/* Header Style */
+/* Header */
 h1 {
-  border-bottom: solid 2px black;
-  padding: 10px;
   text-align: center;
-  background-color: #f2f2f2;
+  margin-bottom: 16px;
 }
 
-/* Table Styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+/* Controls (tabs, selectors) */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.controls md-tabs {
+  flex: 1 1 100%;
 }
 
-tr:nth-child(even) {
-  background-color: #f2f2f2;
+/* Menu Card Grid */
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
 }
 
-/* Button Styles */
-button {
-  background: linear-gradient(to right, #36d1dc, #5b86e5);
-  border: none;
-  color: white;
-  padding: 14px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 12px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
+md-elevated-card {
+  padding: 16px;
 }
 
-button:hover {
-  background: linear-gradient(to right, #5b86e5, #36d1dc);
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-  color: #fff;
-  transform: translateY(-7px);
+md-elevated-card [slot='headline'] {
+  font-weight: 500;
+  margin-bottom: 8px;
 }
