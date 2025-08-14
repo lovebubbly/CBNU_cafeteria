@@ -57,9 +57,8 @@ jobs:
       run: |
         git config --local user.email "ch445566@naver.com"
         git config --local user.name "lovebubbly"
-        git add -A :!chromedriver_linux64.zip
-        git add .
-        git commit -m "자동으로 파일 추가 및 수정 커밋"
+        git add hello.py index.html script.js menu.json
+        git commit -m "자동으로 파일 추가 및 수정 커밋" || echo "No changes to commit"
         git push https://username:${{ secrets.MY_GITHUB_ACCESS_TOKEN }}@github.com/lovebubbly/CBNU_cafeteria.git
       env:
         ACCESS_TOKEN: ${{ secrets.MY_GITHUB_ACCESS_TOKEN }}

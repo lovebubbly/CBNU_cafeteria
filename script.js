@@ -1,13 +1,20 @@
+let currentCafeteria = "한빛식당";
+
 function showMenu(week) {
-  let menu = menuData[week];
+  const menu = (menuData[currentCafeteria] || {})[week] || {};
   let tableContent = "";
-  for (let [date, menuItem] of Object.entries(menu)) {
-    tableContent += `<tr><td>${date}</td><td>${menuItem}</td></tr>`;
+  for (const [date, item] of Object.entries(menu)) {
+    tableContent += `<tr><td>${date}</td><td>${item}</td></tr>`;
   }
   document.getElementById("menuTable").innerHTML = tableContent;
 }
 
-// 페이지가 로드되면 기본적으로 "Week 1"의 메뉴를 표시
-window.onload = function () {
+function changeCafeteria() {
+  currentCafeteria = document.getElementById("cafeteriaSelect").value;
   showMenu("Week 1");
+}
+
+window.onload = function () {
+  changeCafeteria();
 };
+
